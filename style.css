@@ -43,15 +43,16 @@ body {
 /* Button Group */
 .btn-group {
     display: flex;
-    justify-content: space-between;
-    width: 100%; /* Ensure the buttons are on opposite ends */
-    gap: 15px;
+    justify-content: center;
+    align-items: center;
+    gap: 20px; /* Add gap between buttons */
+    width: 100%; /* Take up full width */
 }
 
 /* Buttons */
 button {
-    padding: 10px 25px;
-    font-size: 16px;
+    padding: 12px 30px; /* Increased button size */
+    font-size: 18px; /* Larger font */
     font-weight: bold;
     border: none;
     border-radius: 50px;
@@ -104,18 +105,18 @@ button:focus {
     }
 
     button {
-        padding: 8px 20px;
-        font-size: 14px;
+        padding: 12px 30px;
+        font-size: 16px;
     }
 
     .btn-group {
-        justify-content: space-between;
-        gap: 10px;
+        justify-content: center;
+        gap: 20px;
         width: 100%;
     }
 
     .yes-btn, .no-btn {
-        width: 48%; /* Buttons will now fit side by side */
+        width: 45%; /* Increase button width */
     }
 }
 
@@ -134,14 +135,13 @@ button:focus {
     }
 
     .btn-group {
-        flex-direction: row;
-        gap: 10px;
+        justify-content: center;
+        gap: 15px;
         width: 100%;
-        justify-content: space-between;
     }
 
     .yes-btn, .no-btn {
-        width: 48%; /* Ensure buttons are side by side */
+        width: 45%; /* Increase button width for mobile */
         font-size: 14px;
     }
 }
