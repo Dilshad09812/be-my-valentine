@@ -43,9 +43,9 @@ body {
 /* Button Group */
 .btn-group {
     display: flex;
-    justify-content: center;
+    justify-content: space-between;
+    width: 100%; /* Ensure the buttons are on opposite ends */
     gap: 15px;
-    flex-wrap: wrap;
 }
 
 /* Buttons */
@@ -77,7 +77,6 @@ button:focus {
 
 /* NO Button */
 .no-btn {
-    position: absolute;
     background-color: #ff4d4d;
     color: white;
     box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
@@ -113,12 +112,10 @@ button:focus {
         justify-content: space-between;
         gap: 10px;
         width: 100%;
-        flex-wrap: wrap; /* Ensure they wrap on small screens */
     }
 
     .yes-btn, .no-btn {
-        width: 45%; /* Ensure buttons fit within the screen */
-        margin: 5px 0; /* Ensure some spacing between buttons */
+        width: 48%; /* Buttons will now fit side by side */
     }
 }
 
@@ -140,12 +137,11 @@ button:focus {
         flex-direction: row;
         gap: 10px;
         width: 100%;
-        justify-content: space-evenly;
+        justify-content: space-between;
     }
 
     .yes-btn, .no-btn {
-        width: 45%; /* Ensure buttons fit within the screen */
+        width: 48%; /* Ensure buttons are side by side */
         font-size: 14px;
-        margin: 5px 0; /* Ensure some spacing between buttons */
     }
 }
