@@ -25,7 +25,7 @@ body {
 
 /* Question Styling */
 .question {
-    font-size: 22px;
+    font-size: 22px; /* Reduced text size */
     font-weight: bold;
     margin-bottom: 15px;
     color: #333;
@@ -33,7 +33,7 @@ body {
 
 /* GIF Styling */
 .gif {
-    max-width: 80%;
+    max-width: 80%; /* Reduced size */
     height: auto;
     margin-bottom: 15px;
     border-radius: 10px;
@@ -44,15 +44,14 @@ body {
 .btn-group {
     display: flex;
     justify-content: center;
-    align-items: center;
-    gap: 20px; /* Add gap between buttons */
-    width: 100%; /* Take up full width */
+    gap: 15px;
+    flex-wrap: wrap;
 }
 
 /* Buttons */
 button {
-    padding: 12px 30px; /* Increased button size */
-    font-size: 18px; /* Larger font */
+    padding: 10px 25px; /* Reduced button padding */
+    font-size: 16px; /* Reduced font size */
     font-weight: bold;
     border: none;
     border-radius: 50px;
@@ -78,6 +77,7 @@ button:focus {
 
 /* NO Button */
 .no-btn {
+    position: absolute;
     background-color: #ff4d4d;
     color: white;
     box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
@@ -97,26 +97,16 @@ button:focus {
     }
 
     .question {
-        font-size: 18px;
+        font-size: 18px; /* Smaller text */
     }
 
     .gif {
-        max-width: 70%;
+        max-width: 70%; /* Further reduced size */
     }
 
     button {
-        padding: 12px 30px;
-        font-size: 16px;
-    }
-
-    .btn-group {
-        justify-content: center;
-        gap: 20px;
-        width: 100%;
-    }
-
-    .yes-btn, .no-btn {
-        width: 45%; /* Increase button width */
+        padding: 8px 20px; /* Smaller buttons */
+        font-size: 14px;
     }
 }
 
@@ -127,21 +117,20 @@ button:focus {
     }
 
     .question {
-        font-size: 16px;
+        font-size: 16px; /* Even smaller for mobile */
     }
 
     .gif {
-        max-width: 65%;
+        max-width: 65%; /* Smallest size */
     }
 
     .btn-group {
-        justify-content: center;
-        gap: 15px;
-        width: 100%;
+        flex-direction: column;
+        gap: 10px;
     }
 
-    .yes-btn, .no-btn {
-        width: 45%; /* Increase button width for mobile */
+    button {
+        width: 100%; /* Full width buttons on small screens */
         font-size: 14px;
     }
 }
