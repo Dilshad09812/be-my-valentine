@@ -11,24 +11,30 @@ yesBtn.addEventListener("click", () => {
     noBtn.style.display = "none";  // Hide No Button
 });
 
-// NO Button Click - Move Randomly **Inside the Box**
+// NO Button Click - Move Randomly **Over the GIF Area**
 noBtn.addEventListener("click", () => {
     moveButton(noBtn);
 });
 
-// Function to Move NO Button Randomly (Inside Wrapper Only)
+// Function to Move NO Button Randomly (Only Over GIF Area)
 function moveButton(button) {
-    const wrapper = document.querySelector(".wrapper");
-    const wrapperRect = wrapper.getBoundingClientRect();
+    const gif = document.querySelector(".gif");
+    const gifRect = gif.getBoundingClientRect();
     const buttonRect = button.getBoundingClientRect();
 
-    const maxX = wrapperRect.width - buttonRect.width - 20; // Prevent overflow
-    const maxY = wrapperRect.height - buttonRect.height - 20; // Prevent overflow
+    const maxX = gifRect.width - buttonRect.width - 10; // Prevent overflow
+    const maxY = gifRect.height - buttonRect.height - 10; // Prevent overflow
 
     const randomX = Math.max(10, Math.floor(Math.random() * maxX));
     const randomY = Math.max(10, Math.floor(Math.random() * maxY));
 
     button.style.position = "absolute";
-    button.style.left = `${randomX}px`;
-    button.style.top = `${randomY}px`;
+    button.style.left = `${gifRect.left + randomX}px`;  // Position inside GIF area
+    button.style.top = `${gifRect.top + randomY}px`;    // Position inside GIF area
 }
+
+// Clear sessionStorage and localStorage on page reload
+window.onload = function() {
+    sessionStorage.clear();  // Clears session storage
+    localStorage.clear();    // Clears local storage
+};
