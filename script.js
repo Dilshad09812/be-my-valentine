@@ -3,29 +3,47 @@ const noBtn = document.querySelector(".no-btn");
 const question = document.querySelector(".question");
 const gif = document.querySelector(".gif");
 
-// Change text and gif when the Yes button is clicked
+// Change text and gif when the Yes button is clicked (only if it's clicked successfully)
 yesBtn.addEventListener("click", () => {
-    question.innerHTML = "Being with you is the most beautiful blessing of my life. You are my happiness, my peace, and my greatest love. I cherish every moment with you. 💖✨ I love you endlessly, my Bubu jaan! 😘💕";
-    gif.src = "https://i.postimg.cc/dVtcJ0bQ/dudu-giving-flowers-bubu-flowers.gif";
-
-    // Hide the No button
-    noBtn.style.display = "none";
+    if (window.innerWidth > 768) {
+        question.innerHTML = "Being with you is the most beautiful blessing of my life. You are my happiness, my peace, and my greatest love. I cherish every moment with you. 💖✨ I love you endlessly, my Bubu jaan! 😘💕";
+        gif.src = "https://i.postimg.cc/dVtcJ0bQ/dudu-giving-flowers-bubu-flowers.gif";
+        noBtn.style.display = "none"; // Hide the No button
+    } else {
+        moveYesButton(); // Move Yes button on mobile
+    }
 });
 
-// Make the No button move randomly on hover
+// Move the No button randomly on hover
 noBtn.addEventListener("mouseover", () => {
+    moveButton(noBtn);
+});
+
+// Move the Yes button randomly when clicked (for mobile)
+yesBtn.addEventListener("click", (event) => {
+    if (window.innerWidth <= 768) {
+        moveYesButton();
+    }
+});
+
+// Function to move a button randomly within the wrapper
+function moveButton(button) {
     const wrapper = document.querySelector(".wrapper");
     const wrapperRect = wrapper.getBoundingClientRect();
-    const noBtnRect = noBtn.getBoundingClientRect();
+    const buttonRect = button.getBoundingClientRect();
 
-    // Calculate max positions to ensure the button stays within the wrapper
-    const maxX = wrapperRect.width - noBtnRect.width;
-    const maxY = wrapperRect.height - noBtnRect.height;
+    const maxX = wrapperRect.width - buttonRect.width;
+    const maxY = wrapperRect.height - buttonRect.height;
 
-    // Ensure randomX and randomY are within the wrapper bounds
-    const randomX = Math.min(Math.floor(Math.random() * maxX), maxX);
-    const randomY = Math.min(Math.floor(Math.random() * maxY), maxY);
+    const randomX = Math.max(10, Math.floor(Math.random() * maxX));
+    const randomY = Math.max(10, Math.floor(Math.random() * maxY));
 
-    noBtn.style.left = randomX + "px";
-    noBtn.style.top = randomY + "px";
-});
+    button.style.position = "absolute";
+    button.style.left = randomX + "px";
+    button.style.top = randomY + "px";
+}
+
+// Function to move the Yes button (for mobile)
+function moveYesButton() {
+    moveButton(yesBtn);
+}
