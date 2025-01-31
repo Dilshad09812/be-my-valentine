@@ -1,34 +1,146 @@
-const yesBtn = document.querySelector(".yes-btn");
-const noBtn = document.querySelector(".no-btn");
-const question = document.querySelector(".question");
-const gif = document.querySelector(".gif");
+/* General Styles */
+body {
+    margin: 0;
+    padding: 0;
+    font-family: 'Poppins', Arial, sans-serif;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    background: linear-gradient(135deg, #ffafbd, #ffc3a0);
+    color: #333;
+}
 
-// YES Button Click
-yesBtn.addEventListener("click", () => {
-    question.innerHTML = "Being with you is the most beautiful blessing of my life. You are my happiness, my peace, and my greatest love. I cherish every moment with you. 💖✨ I love you endlessly, my Bubu jaan! 😘💕";
-    gif.src = "https://i.postimg.cc/dVtcJ0bQ/dudu-giving-flowers-bubu-flowers.gif"; // Change GIF
-    yesBtn.style.display = "none"; // Hide Yes Button
-    noBtn.style.display = "none";  // Hide No Button
-});
+/* Wrapper Box */
+.wrapper {
+    position: relative;
+    width: 90%;
+    max-width: 500px;
+    text-align: center;
+    background: white;
+    padding: 25px 15px;
+    border-radius: 15px;
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.2);
+}
 
-// NO Button Click (Move Randomly)
-noBtn.addEventListener("click", () => {
-    moveButton(noBtn);
-});
+/* Question Styling */
+.question {
+    font-size: 22px;
+    font-weight: bold;
+    margin-bottom: 15px;
+    color: #333;
+}
 
-// Function to Move NO Button Randomly
-function moveButton(button) {
-    const wrapper = document.querySelector(".wrapper");
-    const wrapperRect = wrapper.getBoundingClientRect();
-    const buttonRect = button.getBoundingClientRect();
+/* GIF Styling */
+.gif {
+    max-width: 80%;
+    height: auto;
+    margin-bottom: 15px;
+    border-radius: 10px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+}
 
-    const maxX = wrapperRect.width - buttonRect.width - 10; // Prevent overflow
-    const maxY = wrapperRect.height - buttonRect.height - 10; // Prevent overflow
+/* Button Group */
+.btn-group {
+    display: flex;
+    justify-content: center;
+    gap: 15px;
+    flex-wrap: wrap;
+}
 
-    const randomX = Math.max(10, Math.floor(Math.random() * maxX));
-    const randomY = Math.max(10, Math.floor(Math.random() * maxY));
+/* Buttons */
+button {
+    padding: 10px 25px;
+    font-size: 16px;
+    font-weight: bold;
+    border: none;
+    border-radius: 50px;
+    cursor: pointer;
+    transition: transform 0.3s ease, background-color 0.3s ease, left 0.3s ease, top 0.3s ease;
+}
 
-    button.style.position = "absolute";
-    button.style.left = `${randomX}px`;
-    button.style.top = `${randomY}px`;
+button:focus {
+    outline: none;
+}
+
+/* YES Button */
+.yes-btn {
+    background-color: #4caf50;
+    color: white;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+}
+
+.yes-btn:hover {
+    background-color: #45a049;
+    transform: scale(1.05);
+}
+
+/* NO Button */
+.no-btn {
+    position: absolute;
+    background-color: #ff4d4d;
+    color: white;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+}
+
+.no-btn:hover {
+    background-color: #e43e3e;
+    transform: scale(1.05);
+}
+
+/* Mobile Mode - Buttons Left & Right */
+@media (max-width: 768px) {
+    .wrapper {
+        width: 95%;
+        max-width: 380px;
+        padding: 20px;
+    }
+
+    .question {
+        font-size: 18px;
+    }
+
+    .gif {
+        max-width: 70%;
+    }
+
+    /* Buttons Left-Right */
+    .btn-group {
+        display: flex;
+        justify-content: space-between;
+        width: 100%;
+    }
+
+    .yes-btn, .no-btn {
+        flex: 1;
+        max-width: 45%;
+    }
+
+    button {
+        padding: 8px 20px;
+        font-size: 14px;
+    }
+}
+
+@media (max-width: 480px) {
+    .wrapper {
+        max-width: 90%;
+        padding: 18px;
+    }
+
+    .question {
+        font-size: 16px;
+    }
+
+    .gif {
+        max-width: 65%;
+    }
+
+    .btn-group {
+        justify-content: space-between;
+    }
+
+    button {
+        font-size: 14px;
+    }
 }
