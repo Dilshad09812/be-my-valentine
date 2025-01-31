@@ -11,19 +11,19 @@ yesBtn.addEventListener("click", () => {
     noBtn.style.display = "none";  // Hide No Button
 });
 
-// NO Button Click - Move Randomly (Mobile & Desktop)
+// NO Button Click - Move Randomly **Inside the Box**
 noBtn.addEventListener("click", () => {
     moveButton(noBtn);
 });
 
-// Function to Move NO Button Randomly
+// Function to Move NO Button Randomly (Inside Wrapper Only)
 function moveButton(button) {
     const wrapper = document.querySelector(".wrapper");
     const wrapperRect = wrapper.getBoundingClientRect();
     const buttonRect = button.getBoundingClientRect();
 
-    const maxX = wrapperRect.width - buttonRect.width - 10; // Prevent overflow
-    const maxY = wrapperRect.height - buttonRect.height - 10; // Prevent overflow
+    const maxX = wrapperRect.width - buttonRect.width - 20; // Prevent overflow
+    const maxY = wrapperRect.height - buttonRect.height - 20; // Prevent overflow
 
     const randomX = Math.max(10, Math.floor(Math.random() * maxX));
     const randomY = Math.max(10, Math.floor(Math.random() * maxY));
