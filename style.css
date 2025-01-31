@@ -65,7 +65,7 @@ button:focus {
 
 /* YES Button */
 .yes-btn {
-    background-color: #4caf50; /* Green color */
+    background-color: #4caf50;
     color: white;
     box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
 }
@@ -107,7 +107,6 @@ button:focus {
     button {
         padding: 8px 20px; /* Smaller buttons */
         font-size: 14px;
-        width: auto; /* Remove full width */
     }
 }
 
@@ -131,7 +130,7 @@ button:focus {
     }
 
     button {
-        width: auto; /* Remove full width on very small screens */
+        width: 100%; /* Full width buttons on small screens */
         font-size: 14px;
     }
 }
