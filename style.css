@@ -46,6 +46,7 @@ body {
     justify-content: center;
     gap: 15px;
     flex-wrap: wrap;
+    position: relative;
 }
 
 /* Buttons */
@@ -88,7 +89,7 @@ button:focus {
     transform: scale(1.05);
 }
 
-/* Mobile Mode - Buttons Left & Right */
+/* Mobile Mode - Buttons Centered */
 @media (max-width: 768px) {
     .wrapper {
         width: 95%;
@@ -104,16 +105,17 @@ button:focus {
         max-width: 70%;
     }
 
-    /* Buttons Left-Right */
+    /* Buttons Centered in Mobile */
     .btn-group {
-        display: flex;
-        justify-content: space-between;
+        justify-content: center;
+        gap: 10px;
         width: 100%;
     }
 
     .yes-btn, .no-btn {
-        flex: 1;
-        max-width: 45%;
+        position: static;
+        width: 40%;
+        max-width: 150px;
     }
 
     button {
@@ -122,25 +124,14 @@ button:focus {
     }
 }
 
-@media (max-width: 480px) {
-    .wrapper {
-        max-width: 90%;
-        padding: 18px;
-    }
+/* Button Shake Effect (For Mobile) */
+.shake {
+    animation: shake 0.3s ease-in-out;
+}
 
-    .question {
-        font-size: 16px;
-    }
-
-    .gif {
-        max-width: 65%;
-    }
-
-    .btn-group {
-        justify-content: space-between;
-    }
-
-    button {
-        font-size: 14px;
-    }
+@keyframes shake {
+    0%, 100% { transform: translateX(0); }
+    25% { transform: translateX(-5px); }
+    50% { transform: translateX(5px); }
+    75% { transform: translateX(-5px); }
 }
