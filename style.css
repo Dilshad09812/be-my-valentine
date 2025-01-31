@@ -21,6 +21,7 @@ body {
     padding: 25px 15px;
     border-radius: 15px;
     box-shadow: 0 8px 20px rgba(0, 0, 0, 0.2);
+    overflow: hidden; /* Prevent button from going outside */
 }
 
 /* Question Styling */
@@ -57,7 +58,7 @@ button {
     border: none;
     border-radius: 50px;
     cursor: pointer;
-    transition: transform 0.3s ease, background-color 0.3s ease, left 0.3s ease, top 0.3s ease;
+    transition: left 0.3s ease, top 0.3s ease, transform 0.3s ease, background-color 0.3s ease;
 }
 
 button:focus {
@@ -82,7 +83,6 @@ button:focus {
     background-color: #ff4d4d;
     color: white;
     box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
-    transition: left 0.3s ease, top 0.3s ease;
 }
 
 .no-btn:hover {
