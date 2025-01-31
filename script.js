@@ -11,7 +11,7 @@ yesBtn.addEventListener("click", () => {
     noBtn.style.display = "none";  // Hide No Button
 });
 
-// NO Button Click - Move Randomly Over the GIF Area (Button stays visible)
+// NO Button Click - Move Randomly Over the GIF Area (Keep Visible)
 noBtn.addEventListener("click", () => {
     moveButton(noBtn);  // Move the button randomly inside GIF area
 });
