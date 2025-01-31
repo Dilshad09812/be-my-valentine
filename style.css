@@ -58,7 +58,7 @@ button {
     border: none;
     border-radius: 50px;
     cursor: pointer;
-    transition: left 0.3s ease, top 0.3s ease, transform 0.3s ease, background-color 0.3s ease;
+    transition: transform 0.3s ease, background-color 0.3s ease, left 0.3s ease, top 0.3s ease;
 }
 
 button:focus {
