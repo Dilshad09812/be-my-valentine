@@ -8,7 +8,7 @@ yesBtn.addEventListener("click", () => {
     question.innerHTML = "Being with you is the most beautiful blessing of my life. You are my happiness, my peace, and my greatest love. I cherish every moment with you. 💖✨ I love you endlessly, my Bubu jaan! 😘💕";
     gif.src = "https://i.postimg.cc/dVtcJ0bQ/dudu-giving-flowers-bubu-flowers.gif"; // Change gif
     
-    noBtn.style.display = "block"; // Ensure the No button is visible
+    noBtn.style.display = "none"; // Hide the No button after Yes is clicked
 });
 
 // Move the No button randomly when clicked (for mobile version)
