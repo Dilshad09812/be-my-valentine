@@ -33,7 +33,7 @@ body {
 
 /* GIF Styling */
 .gif {
-    max-width: 80%; /* Reduced size */
+    max-width: 80%;
     height: auto;
     margin-bottom: 15px;
     border-radius: 10px;
@@ -97,11 +97,11 @@ button:focus {
     }
 
     .question {
-        font-size: 18px; /* Smaller text */
+        font-size: 18px;
     }
 
     .gif {
-        max-width: 70%; /* Further reduced size */
+        max-width: 70%;
     }
 
     button {
@@ -110,8 +110,15 @@ button:focus {
     }
 
     .btn-group {
-        justify-content: space-between; /* Align buttons side by side */
-        gap: 10px; /* Space between buttons */
+        justify-content: space-between;
+        gap: 10px;
+        width: 100%;
+        flex-wrap: wrap; /* Ensure they wrap on small screens */
+    }
+
+    .yes-btn, .no-btn {
+        width: 45%; /* Ensure buttons fit within the screen */
+        margin: 5px 0; /* Ensure some spacing between buttons */
     }
 }
 
@@ -122,22 +129,23 @@ button:focus {
     }
 
     .question {
-        font-size: 16px; /* Even smaller for mobile */
+        font-size: 16px;
     }
 
     .gif {
-        max-width: 65%; /* Smallest size */
+        max-width: 65%;
     }
 
     .btn-group {
-        flex-direction: row; /* Side-by-side on mobile */
-        gap: 10px; /* Space between buttons */
-        width: 100%; /* Make buttons full width */
+        flex-direction: row;
+        gap: 10px;
+        width: 100%;
         justify-content: space-evenly;
     }
 
-    button {
-        width: 45%; /* Buttons will take up 45% width on mobile */
+    .yes-btn, .no-btn {
+        width: 45%; /* Ensure buttons fit within the screen */
         font-size: 14px;
+        margin: 5px 0; /* Ensure some spacing between buttons */
     }
 }
