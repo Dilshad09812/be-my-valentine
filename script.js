@@ -11,16 +11,12 @@ yesBtn.addEventListener("click", () => {
     noBtn.style.display = "none";  // Hide No Button
 });
 
-// NO Button Click - Move Randomly
+// NO Button Click - Move Randomly (Mobile & Desktop)
 noBtn.addEventListener("click", () => {
-    if (window.innerWidth > 768) {
-        moveButton(noBtn); // Desktop pe random move karega
-    } else {
-        shakeButtons(); // Mobile pe sirf halka sa shake hoga
-    }
+    moveButton(noBtn);
 });
 
-// Function to Move NO Button Randomly (For Desktop)
+// Function to Move NO Button Randomly
 function moveButton(button) {
     const wrapper = document.querySelector(".wrapper");
     const wrapperRect = wrapper.getBoundingClientRect();
@@ -35,12 +31,4 @@ function moveButton(button) {
     button.style.position = "absolute";
     button.style.left = `${randomX}px`;
     button.style.top = `${randomY}px`;
-}
-
-// Function to Shake Buttons on Mobile
-function shakeButtons() {
-    document.querySelector(".btn-group").classList.add("shake");
-    setTimeout(() => {
-        document.querySelector(".btn-group").classList.remove("shake");
-    }, 500);
 }
