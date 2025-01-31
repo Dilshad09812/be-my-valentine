@@ -1,4 +1,4 @@
-/* style.css */
+/* General Styles */
 body {
     margin: 0;
     padding: 0;
@@ -11,6 +11,7 @@ body {
     color: #333;
 }
 
+/* Wrapper Box */
 .wrapper {
     position: relative;
     width: 90%;
@@ -22,6 +23,7 @@ body {
     box-shadow: 0 8px 20px rgba(0, 0, 0, 0.2);
 }
 
+/* Question Styling */
 .question {
     font-size: 24px;
     font-weight: bold;
@@ -29,6 +31,7 @@ body {
     color: #333;
 }
 
+/* GIF Styling */
 .gif {
     max-width: 100%;
     height: auto;
@@ -37,12 +40,15 @@ body {
     box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
 }
 
+/* Button Group */
 .btn-group {
     display: flex;
-    justify-content: space-around;
+    justify-content: center;
     gap: 15px;
+    flex-wrap: wrap;
 }
 
+/* Buttons */
 button {
     padding: 12px 30px;
     font-size: 18px;
@@ -57,6 +63,7 @@ button:focus {
     outline: none;
 }
 
+/* YES Button */
 .yes-btn {
     background-color: #4caf50;
     color: white;
@@ -68,6 +75,7 @@ button:focus {
     transform: scale(1.05);
 }
 
+/* NO Button */
 .no-btn {
     position: absolute;
     background-color: #ff4d4d;
@@ -78,4 +86,43 @@ button:focus {
 .no-btn:hover {
     background-color: #e43e3e;
     transform: scale(1.05);
+}
+
+/* Media Queries for Responsive Design */
+@media (max-width: 768px) {
+    /* Adjust container */
+    .wrapper {
+        width: 95%;
+        max-width: 400px;
+        padding: 25px 15px;
+    }
+
+    /* Reduce font sizes for smaller screens */
+    .question {
+        font-size: 20px;
+    }
+
+    button {
+        padding: 10px 25px;
+        font-size: 16px;
+    }
+}
+
+@media (max-width: 480px) {
+    /* Adjust wrapper for mobile */
+    .wrapper {
+        max-width: 90%;
+        padding: 20px;
+    }
+
+    /* Stack buttons vertically on very small screens */
+    .btn-group {
+        flex-direction: column;
+        gap: 10px;
+    }
+
+    /* Buttons full width on mobile */
+    button {
+        width: 100%;
+    }
 }
