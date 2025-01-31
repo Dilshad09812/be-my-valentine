@@ -5,10 +5,9 @@ const gif = document.querySelector(".gif");
 
 let isNoClicked = false;
 
-// Function to change the gif and hide the buttons after Yes is clicked
+// Change text and gif when the Yes button is clicked
 yesBtn.addEventListener("click", () => {
     if (window.innerWidth > 768) {
-        // Change text and gif on desktop/laptop
         question.innerHTML = "Being with you is the most beautiful blessing of my life. You are my happiness, my peace, and my greatest love. I cherish every moment with you. 💖✨ I love you endlessly, my Bubu jaan! 😘💕";
         gif.src = "https://i.postimg.cc/dVtcJ0bQ/dudu-giving-flowers-bubu-flowers.gif";
         noBtn.style.display = "none"; // Hide the No button
@@ -18,14 +17,14 @@ yesBtn.addEventListener("click", () => {
     }
 });
 
-// Function to move the No button randomly on hover (Desktop)
+// Move the No button randomly on hover (Desktop)
 noBtn.addEventListener("mouseover", () => {
     if (window.innerWidth > 768) {
         moveButton(noBtn);
     }
 });
 
-// Function to handle the No button click behavior (Mobile)
+// Move the No button randomly on click (Mobile)
 noBtn.addEventListener("click", () => {
     moveButton(noBtn); // Move No button randomly on click
     if (!isNoClicked) {
