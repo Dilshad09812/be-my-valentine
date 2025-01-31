@@ -5,17 +5,14 @@ const gif = document.querySelector(".gif");
 
 // Change text and gif when the Yes button is clicked
 yesBtn.addEventListener("click", () => {
-    question.innerHTML = "Being with you is the most beautiful blessing of my life. You are my happiness, my peace, and my greatest love. I cherish every moment with you. 💖✨ I love you endlessly, my Bubu jaan! 😘💕";
-    gif.src = "https://i.postimg.cc/dVtcJ0bQ/dudu-giving-flowers-bubu-flowers.gif"; // Change gif
-    
-    noBtn.style.display = "none"; // Hide the No button after Yes is clicked
-});
-
-// Move the No button randomly on hover (Desktop version)
-noBtn.addEventListener("mouseover", () => {
     if (window.innerWidth > 768) {
-        moveButton(noBtn); // Move the No button only on desktop
+        question.innerHTML = "Being with you is the most beautiful blessing of my life. You are my happiness, my peace, and my greatest love. I cherish every moment with you. 💖✨ I love you endlessly, my Bubu jaan! 😘💕";
+        gif.src = "https://i.postimg.cc/dVtcJ0bQ/dudu-giving-flowers-bubu-flowers.gif";
+        noBtn.style.display = "none"; // Hide the No button
+    } else {
+        moveYesButton(); // Move Yes button on mobile
     }
+    yesBtn.style.display = "none"; // Hide the Yes button after it is clicked
 });
 
 // Function to move a button randomly within the wrapper
@@ -35,9 +32,7 @@ function moveButton(button) {
     button.style.top = randomY + "px";
 }
 
-// Move the No button randomly when clicked (for mobile version)
-noBtn.addEventListener("click", () => {
-    if (window.innerWidth <= 768) {
-        moveButton(noBtn); // Move the No button only on mobile
-    }
-});
+// Function to move the Yes button (for mobile)
+function moveYesButton() {
+    moveButton(yesBtn);
+}
