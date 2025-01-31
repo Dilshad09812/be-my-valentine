@@ -11,10 +11,10 @@ yesBtn.addEventListener("click", () => {
     noBtn.style.display = "none"; // Hide the No button after Yes is clicked
 });
 
-// Move the No button randomly when clicked (for mobile version)
-noBtn.addEventListener("click", () => {
-    if (window.innerWidth <= 768) {
-        moveButton(noBtn); // Move the No button only on mobile
+// Move the No button randomly on hover (Desktop version)
+noBtn.addEventListener("mouseover", () => {
+    if (window.innerWidth > 768) {
+        moveButton(noBtn); // Move the No button only on desktop
     }
 });
 
@@ -34,3 +34,10 @@ function moveButton(button) {
     button.style.left = randomX + "px";
     button.style.top = randomY + "px";
 }
+
+// Move the No button randomly when clicked (for mobile version)
+noBtn.addEventListener("click", () => {
+    if (window.innerWidth <= 768) {
+        moveButton(noBtn); // Move the No button only on mobile
+    }
+});
