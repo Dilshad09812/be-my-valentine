@@ -3,6 +3,9 @@ const noBtn = document.querySelector(".no-btn");
 const question = document.querySelector(".question");
 const gif = document.querySelector(".gif");
 const btnGroup = document.querySelector(".btn-group");
+const openBtn = document.querySelector(".open-btn");
+const modal = document.querySelector(".modal");
+const closeModal = document.querySelector(".close");
 
 // YES Button Click - Change GIF & Hide Buttons
 yesBtn.addEventListener("click", () => {
@@ -10,6 +13,7 @@ yesBtn.addEventListener("click", () => {
     gif.src = "https://i.postimg.cc/dVtcJ0bQ/dudu-giving-flowers-bubu-flowers.gif"; // Change GIF
     yesBtn.style.display = "none"; // Hide Yes Button
     noBtn.style.display = "none";  // Hide No Button
+    openBtn.style.display = "block"; // Show "Open it bby" Button
 });
 
 // NO Button Click - Move Randomly (Mobile)
@@ -32,3 +36,20 @@ function moveButton(button) {
         button.style.top = `${randomY}px`;
     }
 }
+
+// Open YouTube Modal on "Open it bby" Button Click
+openBtn.addEventListener("click", () => {
+    modal.style.display = "block";
+});
+
+// Close Modal when X is clicked
+closeModal.addEventListener("click", () => {
+    modal.style.display = "none";
+});
+
+// Close Modal if clicked outside of the content area
+window.addEventListener("click", (event) => {
+    if (event.target === modal) {
+        modal.style.display = "none";
+    }
+});
