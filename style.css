@@ -21,7 +21,7 @@ body {
     padding: 25px 15px;
     border-radius: 15px;
     box-shadow: 0 8px 20px rgba(0, 0, 0, 0.2);
-    overflow: hidden;
+    overflow: hidden; /* Prevent button from going outside */
 }
 
 /* Question Styling */
@@ -44,9 +44,10 @@ body {
 /* Button Group */
 .btn-group {
     display: flex;
-    justify-content: center;
+    justify-content: space-between; /* Align buttons to left and right */
     width: 100%;
-    padding: 0 20px;
+    max-width: 400px; /* Adjust the maximum width */
+    margin: 0 auto; /* Center align the buttons container */
 }
 
 /* Buttons */
@@ -58,6 +59,7 @@ button {
     border-radius: 50px;
     cursor: pointer;
     transition: transform 0.3s ease, background-color 0.3s ease, left 0.3s ease, top 0.3s ease;
+    width: 45%; /* Reduce width for buttons */
 }
 
 button:focus {
@@ -83,13 +85,12 @@ button:focus {
     box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
 }
 
-/* Button Hover */
 .no-btn:hover {
     background-color: #e43e3e;
     transform: scale(1.05);
 }
 
-/* Mobile Mode */
+/* Mobile Mode - Buttons Centered */
 @media (max-width: 768px) {
     .wrapper {
         width: 95%;
@@ -105,14 +106,16 @@ button:focus {
         max-width: 70%;
     }
 
+    /* Buttons Centered in Mobile */
     .btn-group {
         justify-content: space-between;
         gap: 10px;
+        width: 100%;
     }
 
     .yes-btn, .no-btn {
         position: static;
-        width: 40%;
+        width: 45%;
         max-width: 150px;
     }
 
