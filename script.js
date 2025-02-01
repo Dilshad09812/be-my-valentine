@@ -11,26 +11,27 @@ yesBtn.addEventListener("click", () => {
     noBtn.style.display = "none";  // Hide No Button
 });
 
-// NO Button Click - Move Randomly Anywhere
-noBtn.addEventListener("click", () => {
-    moveButton(noBtn);  // Move the button randomly anywhere on the page
+// NO Button Hover (Desktop) - Move Randomly
+noBtn.addEventListener("mouseover", () => {
+    if (window.innerWidth > 768) {  // Only on desktop/laptop
+        moveButton(noBtn);
+    }
 });
 
-// Function to Move NO Button Randomly (Anywhere on the page)
+// NO Button Click (Mobile) - Move Randomly
+noBtn.addEventListener("click", () => {
+    moveButton(noBtn);
+});
+
+// Function to Move NO Button Randomly
 function moveButton(button) {
-    const maxX = window.innerWidth - button.offsetWidth - 10; // Prevent overflow
-    const maxY = window.innerHeight - button.offsetHeight - 10; // Prevent overflow
+    const maxX = window.innerWidth - button.offsetWidth - 20; // Prevent overflow
+    const maxY = window.innerHeight - button.offsetHeight - 20; // Prevent overflow
 
     const randomX = Math.floor(Math.random() * maxX);
     const randomY = Math.floor(Math.random() * maxY);
 
     button.style.position = "absolute";
-    button.style.left = `${randomX}px`;  // Random horizontal position
-    button.style.top = `${randomY}px`;   // Random vertical position
+    button.style.left = `${randomX}px`;  
+    button.style.top = `${randomY}px`;   
 }
-
-// Clear sessionStorage and localStorage on page reload
-window.onload = function() {
-    sessionStorage.clear();  // Clears session storage
-    localStorage.clear();    // Clears local storage
-};
