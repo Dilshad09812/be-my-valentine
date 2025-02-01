@@ -21,6 +21,7 @@ body {
     padding: 25px 15px;
     border-radius: 15px;
     box-shadow: 0 8px 20px rgba(0, 0, 0, 0.2);
+    overflow: hidden;
 }
 
 /* Question Styling */
@@ -44,7 +45,6 @@ body {
 .btn-group {
     display: flex;
     justify-content: space-between;
-    align-items: center;
     width: 100%;
     padding: 0 20px;
 }
@@ -80,12 +80,10 @@ button:focus {
 .no-btn {
     background-color: #ff4d4d;
     color: white;
-    position: absolute;
-    top: 50%;
-    transform: translateY(-50%);
     box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
 }
 
+/* Button Hover */
 .no-btn:hover {
     background-color: #e43e3e;
     transform: scale(1.05);
