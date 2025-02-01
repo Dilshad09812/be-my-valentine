@@ -12,25 +12,23 @@ yesBtn.addEventListener("click", () => {
     noBtn.style.display = "none";  // Hide No Button
 });
 
-// NO Button Click - Move Randomly (All Devices)
+// NO Button Click - Move Randomly (Mobile)
 noBtn.addEventListener("click", () => {
     moveButton(noBtn);
 });
 
-// NO Button Hover - Move Randomly (Desktop Only)
-noBtn.addEventListener("mouseenter", () => {
-    if (window.innerWidth > 768) { // Desktop Only
-        moveButton(noBtn);
-    }
-});
-
-// Function to Move NO Button Randomly Above GIF
+// Function to Move NO Button Randomly (Only on Mobile)
 function moveButton(button) {
-    const wrapperRect = document.querySelector(".wrapper").getBoundingClientRect();
-    const gifRect = gif.getBoundingClientRect();
-    
-    const maxX = wrapperRect.width - button.offsetWidth - 20;
-    const maxY = gifRect.top - wrapperRect.top - button.offsetHeight - 10; // Above GIF
+    if (window.innerWidth <= 768) { // Mobile Only
+        const wrapperRect = document.querySelector(".wrapper").getBoundingClientRect();
+        const maxX = wrapperRect.width - button.offsetWidth - 10;
+        const maxY = wrapperRect.height - button.offsetHeight - 10;
 
-    const randomX = Math.max(10, Math.floor(Math.random() * maxX));
-    const rand
+        const randomX = Math.floor(Math.random() * maxX);
+        const randomY = Math.floor(Math.random() * maxY);
+
+        button.style.position = "absolute";
+        button.style.left = `${randomX}px`;
+        button.style.top = `${randomY}px`;
+    }
+}
