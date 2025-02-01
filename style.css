@@ -21,7 +21,6 @@ body {
     padding: 25px 15px;
     border-radius: 15px;
     box-shadow: 0 8px 20px rgba(0, 0, 0, 0.2);
-    overflow: hidden;
 }
 
 /* Question Styling */
@@ -45,15 +44,15 @@ body {
 .btn-group {
     display: flex;
     justify-content: space-between;
-    gap: 15px;
+    align-items: center;
     width: 100%;
-    position: relative;
+    padding: 0 20px;
 }
 
 /* Buttons */
 button {
-    padding: 12px 30px;
-    font-size: 18px;
+    padding: 10px 25px;
+    font-size: 16px;
     font-weight: bold;
     border: none;
     border-radius: 50px;
@@ -79,9 +78,11 @@ button:focus {
 
 /* NO Button */
 .no-btn {
-    position: absolute;
     background-color: #ff4d4d;
     color: white;
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
     box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
 }
 
@@ -90,7 +91,7 @@ button:focus {
     transform: scale(1.05);
 }
 
-/* Mobile Mode - Ensuring Buttons Are Properly Positioned */
+/* Mobile Mode */
 @media (max-width: 768px) {
     .wrapper {
         width: 95%;
@@ -106,22 +107,19 @@ button:focus {
         max-width: 70%;
     }
 
-    /* Buttons Positioned Left & Right in Mobile */
     .btn-group {
         justify-content: space-between;
-        gap: 20px;
-        width: 100%;
-        padding: 0 20px;
+        gap: 10px;
     }
 
     .yes-btn, .no-btn {
-        width: 45%;
+        position: static;
+        width: 40%;
         max-width: 150px;
-        position: relative; /* Ensure buttons don't overlap */
     }
 
     button {
-        padding: 10px 20px;
-        font-size: 16px;
+        padding: 8px 20px;
+        font-size: 14px;
     }
 }
