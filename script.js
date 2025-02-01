@@ -11,16 +11,16 @@ yesBtn.addEventListener("click", () => {
     noBtn.style.display = "none";  // Hide No Button
 });
 
-// NO Button Hover (Desktop) - Move Randomly
-noBtn.addEventListener("mouseover", () => {
-    if (window.innerWidth > 768) {  // Only on desktop/laptop
-        moveButton(noBtn);
-    }
-});
-
-// NO Button Click (Mobile) - Move Randomly
+// NO Button Click (Mobile Only)
 noBtn.addEventListener("click", () => {
     moveButton(noBtn);
+});
+
+// NO Button Hover (Desktop Only)
+noBtn.addEventListener("mouseenter", () => {
+    if (window.innerWidth > 768) { // Desktop only
+        moveButton(noBtn);
+    }
 });
 
 // Function to Move NO Button Randomly
