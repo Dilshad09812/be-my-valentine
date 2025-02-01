@@ -44,7 +44,7 @@ body {
 /* Button Group */
 .btn-group {
     display: flex;
-    justify-content: space-between; /* Align buttons to left and right */
+    justify-content: space-evenly; /* Ensure the buttons are spaced evenly */
     width: 100%;
     max-width: 400px; /* Adjust the maximum width */
     margin: 0 auto; /* Center align the buttons container */
@@ -108,8 +108,8 @@ button:focus {
 
     /* Buttons Centered in Mobile */
     .btn-group {
-        justify-content: space-between;
-        gap: 10px;
+        justify-content: space-evenly;  /* Ensure even space between buttons */
+        gap: 10px;  /* Slight gap between buttons */
         width: 100%;
     }
 
